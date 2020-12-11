@@ -61,7 +61,7 @@ source "amazon-ebs" "aws" {
     force_deregister = true
     force_delete_snapshot = true
     region = var.aws_region
-    spot_instance_types = [var.aws_instance_type]
+    spot_instance_types = ["t3a.small"]
     spot_price = "auto"
     source_ami_filter {
         filters = {
