@@ -61,8 +61,7 @@ source "amazon-ebs" "aws" {
     force_deregister = true
     force_delete_snapshot = true
     region = var.aws_region
-    spot_instance_types = ["t3a.small"]
-    spot_price = "auto"
+    instance_type = var.aws_instance_type
     source_ami_filter {
         filters = {
             name = "CentOS 8.*"

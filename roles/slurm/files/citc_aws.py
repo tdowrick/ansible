@@ -203,7 +203,7 @@ async def start_node(log, host: str, nodespace: Dict[str, str], ssh_keys: str) -
     loop = asyncio.get_event_loop()
 
     try:
-        start_instance = functools.partial(client.run_instances, **instance_details)
+        start_instance = functools.partial(client.request_spot_instances, **instance_details)
         instance_result = await loop.run_in_executor(None, start_instance)
         instance = instance_result["Instances"][0]
     except Exception as e:
